@@ -14,12 +14,13 @@ app = Dash(__name__)
 
 @app.callback(
     Output(component_id="data-graph", component_property= "figure"),
-    Input(component_id="col-filter",component_property="value")
-
+    Input(component_id="col-filter",component_property="value"),
+    Input(component_id="year-slider",component_property="value")
 )
-def update_graph(col_filter : str) :
+def update_graph(col_filter, year_slider) :
     filtered_data = data.query
-    fig = pe.line(data_frame=data, y=col_filter)
+    temp = data.loc[f"{year_slider[0]}" : f"{year_slider[1]}"]
+    fig = pe.line(data_frame=temp, y=col_filter)
     return fig
 
 if __name__ == "__main__" :
@@ -28,6 +29,18 @@ if __name__ == "__main__" :
         dcc.Graph(
             id="data-graph",
             figure={}
+        ),
+
+        dcc.RangeSlider(
+            min=data.head(1).index.year[0],
+            max=data.tail(1).index.year[0],
+            id="year-slider",
+            marks={
+                year : f'{year}' for year in data.index.year
+            },
+            value=[2022,2023],
+            allowCross=True
+
         ),
         dcc.Dropdown(
             id="col-filter",
@@ -39,4 +52,4 @@ if __name__ == "__main__" :
         )
     ])
 
-    app.run(debug=True)
+    app.run_server(debug=True)
