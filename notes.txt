@@ -1,0 +1,10 @@
+# ability to take input and fetch stock data
+
+    - possibly a fallback option if API fetch failes
+
+# ability to show results of exploratory data analytics
+
+
+# ability to show desired OHLCV values resamples and aggregated
+as per user's requirement
+    ability to render graphs to support this 
