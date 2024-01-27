@@ -1,0 +1,18 @@
+
+
+1) Dependencies : Extra tools/libraries required
+
+	a) pandas : data analysis
+	b) plotly.express : library for making graph
+	c) dash : dashboard features
+	d) scikit-learn : machine learning features
+	e) flask : web server (launch and provide app in browser)
+
+
+layout: 
+
+1) Buttons
+2) Dropdown
+3) slider : range
+4) Window Panes
+5) graph : 

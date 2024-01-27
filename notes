@@ -1,0 +1,24 @@
+
+EVENT:
+
+    changes in the user interface (app layout on the screen) from the user-side
+    Drop down from Close column to Volume Column
+
+Desired Effect:
+    What the user wants to happen
+
+    e.g: changing from Close to Volume column in dropdown means update graph
+    data 
+
+
+
+////BACKEND (INTERNAL CODE)
+
+
+1) Which component user has changed
+
+2) Decide Input and Output
+
+    e.g: Input components are
+                a) Rangeslider
+                b) Dropdown menu
